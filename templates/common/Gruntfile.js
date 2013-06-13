@@ -33,6 +33,10 @@ module.exports = function (grunt) {
         files: ['<%%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         tasks: ['compass']
       },
+      recess: {
+        files: ['<%= yeoman.app %>/styles/{,*/}*.{less}'],
+        tasks: ['recess:server']
+      },
       livereload: {
         files: [
           '<%%= yeoman.app %>/{,*/}*.html',
@@ -140,6 +144,17 @@ module.exports = function (grunt) {
           debugInfo: true
         }
       }
+    },
+    recess: {
+      options: {
+        compile: true
+      },
+      dist: {
+        files: {
+          'app/styles/main.css' : ['app/styles/main.less']
+        }
+      },
+      
     },
     concat: {
       dist: {
@@ -269,7 +284,8 @@ module.exports = function (grunt) {
     'livereload-start',
     'connect:livereload',
     'open',
-    'watch'
+    'watch',
+    'recess:dist'
   ]);
 
   grunt.registerTask('test', [
@@ -296,7 +312,8 @@ module.exports = function (grunt) {
     'ngmin',
     'uglify',
     'rev',
-    'usemin'
+    'usemin',
+    'recess'
   ]);
 
   grunt.registerTask('default', ['build']);
