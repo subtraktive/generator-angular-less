@@ -35,7 +35,7 @@ module.exports = function (grunt) {
       },
       recess: {
         files: ['<%%= yeoman.app %>/styles/{,*/}*.{less}'],
-        tasks: ['recess:dist']
+        tasks: ['recess']
       },
       livereload: {
         files: [
@@ -284,8 +284,9 @@ module.exports = function (grunt) {
     'livereload-start',
     'connect:livereload',
     'open',
-    'watch',
-    'recess:dist'
+    'recess',
+    'watch'
+  
   ]);
 
   grunt.registerTask('test', [
@@ -313,7 +314,7 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'recess:dist'
+    'recess'
   ]);
 
   grunt.registerTask('default', ['build']);
