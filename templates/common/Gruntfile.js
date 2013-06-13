@@ -34,8 +34,8 @@ module.exports = function (grunt) {
         tasks: ['compass']
       },
       recess: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.{less}'],
-        tasks: ['recess:server']
+        files: ['<%%= yeoman.app %>/styles/{,*/}*.{less}'],
+        tasks: ['recess:dist']
       },
       livereload: {
         files: [
@@ -313,7 +313,7 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'recess'
+    'recess:dist'
   ]);
 
   grunt.registerTask('default', ['build']);
