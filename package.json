@@ -1,5 +1,5 @@
 {
-  "name": "generator-angular",
+  "name": "generator-angular-less",
   "version": "0.2.2",
   "description": "Yeoman generator for AngularJS",
   "keywords": [
@@ -10,13 +10,13 @@
     "front-end",
     "app"
   ],
-  "homepage": "https://github.com/yeoman/generator-angular",
+  "homepage": "https://github.com/kumarz/generator-angular-less",
   "bugs": "https://github.com/yeoman/generator-angular/issues",
   "author": "Chrome Developer Relations",
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/yeoman/generator-angular.git"
+    "url": "git://github.com/kumarz/generator-angular-less.git"
   },
   "scripts": {
     "test": "mocha"
