@@ -78,7 +78,7 @@ Generator.prototype.askFor = function askFor() {
     default: 'Y/n',
     warning: 'Yes: All Twitter Bootstrap files will be placed into the styles directory.'
   }, {
-    name: 'compassBootstrap',
+    name: 'lessBootstrap',
     message: 'If so, would you like to use Twitter Bootstrap for LESS?',
     default: 'Y/n',
     warning: 'Yes: All Twitter Bootstrap files will be placed into the styles directory.'
@@ -90,7 +90,7 @@ Generator.prototype.askFor = function askFor() {
     }
 
     this.bootstrap = (/y/i).test(props.bootstrap);
-    this.compassBootstrap = (/y/i).test(props.compassBootstrap);
+    this.lessBootstrap = (/y/i).test(props.lessBootstrap);
 
     cb();
   }.bind(this));
@@ -133,7 +133,7 @@ Generator.prototype.askForModules = function askForModules() {
 Generator.prototype.bootstrapFiles = function bootstrapFiles() {
   var appPath = this.appPath;
 
-  if (this.compassBootstrap) {
+  if (this.lessBootstrap) {
     var cb = this.async();
 
     this.write(path.join(appPath, 'styles/main.less'), '@import "less/bootstrap.less";');
@@ -149,7 +149,7 @@ Generator.prototype.bootstrapFiles = function bootstrapFiles() {
     this.copy('bootstrap.css', path.join(appPath, 'styles/bootstrap.css'));
   }
 
-  if (this.bootstrap || this.compassBootstrap) {
+  if (this.bootstrap || this.lessBootstrap) {
     // this.directory('images', 'app/images');
   }
 };
