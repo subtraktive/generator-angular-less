@@ -137,7 +137,7 @@ Generator.prototype.bootstrapFiles = function bootstrapFiles() {
     var cb = this.async();
 
     this.write(path.join(appPath, 'styles/main.less'), '@import "less/bootstrap.less";');
-    this.remote('twitter', 'bootstrap', '3.0.0-wip', function (err, remote) {
+    this.remote('twbs', 'bootstrap', '3.0.0-rc.2', function (err, remote) {
       if (err) {
         return cb(err);
       }
